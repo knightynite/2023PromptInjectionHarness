@@ -2,3 +2,11 @@
 
 A test harness for evaluating prompt injection attacks against chat-style LLMs
 (OpenAI / Anthropic / open models via local inference).
+
+## Approach
+
+1. Maintain a payload library (direct injection, indirect/document-borne injection,
+   role hijacking, system-prompt extraction).
+2. Wrap any chat LLM behind a uniform interface (`call_model(system, user)`).
+3. For each payload + each victim system prompt, run the attack.
+4. An evaluator scores whether the model fell for it (rule-based + LLM-judge fallback).
