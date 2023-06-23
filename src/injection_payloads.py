@@ -10,3 +10,5 @@ def load_payloads(path=None):
         return json.load(f)
 
 
+def by_category(payloads, category):
+    return [p for p in payloads if p['category'] == category]
