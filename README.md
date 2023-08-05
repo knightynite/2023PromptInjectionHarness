@@ -10,3 +10,11 @@ A test harness for evaluating prompt injection attacks against chat-style LLMs
 2. Wrap any chat LLM behind a uniform interface (`call_model(system, user)`).
 3. For each payload + each victim system prompt, run the attack.
 4. An evaluator scores whether the model fell for it (rule-based + LLM-judge fallback).
+
+
+## Files
+
+- `src/injection_payloads.py` — categorized payloads
+- `src/test_harness.py` — runner that executes payloads against a configured model
+- `src/evaluator.py` — checks output for attack success signatures
+- `payloads/known_attacks.json` — extensible payload catalogue
